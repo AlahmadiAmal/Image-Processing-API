@@ -12,7 +12,7 @@ const directoryPath_thumbs = path.join(__dirname, '../../../thumbs');
 
 const routes = express.Router();
 
-images.get('/', async (req, res) => {
+images.get('/', async (req: express.Request, res: express.Response) => {
     const filename = `${req.query.filename}.png`;
     const imagepath = path.join(__dirname, `../../../images/${filename}`);
     const filename_output = `${req.query.filename}-${req.query.width}x${req.query.height}.png`;
